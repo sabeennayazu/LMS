@@ -132,7 +132,10 @@
 		$connection = mysqli_connect("localhost","root","");
 		$db = mysqli_select_db($connection,"lms");
 		$query = "insert into issued_books values(null,$_POST[book_no],'$_POST[book_name]','$_POST[book_author]',$_POST[student_id],1,'$_POST[issue_date]')";
+
+		
 		$query_run = mysqli_query($connection,$query);
-		#header("Location:admin_dashboard.php");
+		$connection->query("update books set avail=0 where book_no=$_POST[book_no]");
+		header("location:admin_dashboard.php");
 	}
 ?>

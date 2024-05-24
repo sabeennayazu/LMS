@@ -69,12 +69,13 @@ INSERT INTO `authors` (`author_id`, `author_name`) VALUES
 --
 
 CREATE TABLE `books` (
-  `book_id` int(11) NOT NULL,
+  `book_id` int(11) NOT NULL primary key auto_increment,
   `book_name` varchar(250) NOT NULL,
   `author_id` int(11) NOT NULL,
   `cat_id` int(11) NOT NULL,
   `book_no` int(11) NOT NULL,
-  `book_price` int(11) NOT NULL
+  `book_price` int(11) NOT NULL,
+  `avail` TINYINT(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

@@ -1,15 +1,36 @@
 <?php
 	session_start();
-	function get_user_issue_book_count(){
+	function getConnection() {
 		$connection = mysqli_connect("localhost","root","");
+
 		$db = mysqli_select_db($connection,"lms");
+		return $connection;
+	}
+	function get_user_issue_book_count(){
+		$connection = getConnection();
 		$user_issue_book_count = 0;
 		$query = "select count(*) as user_issue_book_count from issued_books where student_id = $_SESSION[id]";
 		$query_run = mysqli_query($connection,$query);
+
+
 		while ($row = mysqli_fetch_assoc($query_run)){
 			$user_issue_book_count = $row['user_issue_book_count'];
 		}
 		return($user_issue_book_count);
+	}
+
+	function get_book_count(){
+		$connection = getConnection();
+
+		$book_count = 0;
+		$query = "select count(*) as book_count from books where avail=1";
+		$query_run = mysqli_query($connection,$query);
+
+		
+		while ($row = mysqli_fetch_assoc($query_run)){
+			$book_count = $row['book_count'];
+		}
+		return($book_count);
 	}
 ?>
 <!DOCTYPE html>
@@ -61,9 +82,9 @@
 			<div class="card bg-light" style="width: 300px">
 				<div class="card-header">Available books</div>
 				<div class="card-body">
-				<p class="card-text">Available books <?php echo get_user_issue_book_count();?></p>
+				<p class="card-text">Available books <?php echo get_book_count();?></p>
 
-					<a class="btn btn-warning" href="view_issued_book.php">Available Books</a>
+					<a class="btn btn-warning" href="view_all_books.php">Available Books</a>
 				</div>
 			</div>
 		</div>

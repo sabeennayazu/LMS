@@ -97,7 +97,7 @@
 		<div class="row">
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
-				<form action="" method="post">
+				<form action="add_book_to_db.php" method="post">
 					<div class="form-group">
 						<label for="email">Book Name:</label>
 						<input type="text" name="book_name" class="form-control" required>
@@ -125,14 +125,3 @@
 		</div>
 </body>
 </html>
-
-<?php
-	if(isset($_POST['add_book']))
-	{
-		$connection = mysqli_connect("localhost","root","");
-		$db = mysqli_select_db($connection,"lms");
-		$query = "insert into books values(null,'$_POST[book_name]','$_POST[book_author]','$_POST[book_category]',$_POST[book_no],$_POST[book_price])";
-		$query_run = mysqli_query($connection,$query);
-		#header("location:add_book.php");
-	}
-?>

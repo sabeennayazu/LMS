@@ -105,6 +105,7 @@
 							<th>Category</th>
 							<th>ISBN No.</th>
 							<th>Price</th>
+							<th>available</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -121,6 +122,7 @@
 								<td><?php echo $row['cat_id'];?></td>
 								<td><?php echo $row['book_no'];?></td>
 								<td><?php echo $row['book_price'];?></td>
+								<td><?= $row["avail"]==1?"yes":"no";?></td>
 								<td><button class="btn" name=""><a href="edit_book.php?bn=<?php echo $row['book_no'];?>">Edit</a></button>
 								<button class="btn"><a href="delete_book.php?bn=<?php echo $row['book_no'];?>">Delete</a></button></td>
 							</tr>
