@@ -73,18 +73,18 @@
 			<div class="card bg-light" style="width: 300px">
 				<div class="card-header">Book Issued</div>
 				<div class="card-body">
-					<p class="card-text">No of book issued: <?php echo get_user_issue_book_count();?></p>
+					<p class="card-text">No of book issued : <?php echo get_user_issue_book_count();?></p>
 					<a class="btn btn-success" href="view_issued_book.php">View Issued Books</a>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-3" style="margin: 25px">
 			<div class="card bg-light" style="width: 300px">
-				<div class="card-header">Available books</div>
+				<div class="card-header">Explore books</div>
 				<div class="card-body">
-				<p class="card-text">Available books <?php echo get_book_count();?></p>
+				<p class="card-text">Total books : <?php echo get_book_count();?></p>
 
-					<a class="btn btn-warning" href="view_all_books.php">Available Books</a>
+					<a class="btn btn-warning" href="view_all_books.php">Explore Books</a>
 				</div>
 			</div>
 		</div>

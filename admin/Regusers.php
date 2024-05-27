@@ -10,6 +10,43 @@
 	$address = "";
 	$query = "select * from users";
 ?>
+
+<?php
+
+# Database connection
+if (!$connection) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["delete"])) {
+        $user_id = $_POST['user_id'];
+		if(mysqli_num_rows($connection->query("SELECT * FROM users where id=$user_id")) > 0) {
+
+
+
+
+        # Prepare and execute delete query
+        $query = "DELETE FROM users WHERE id = ?";
+        $stmt = mysqli_prepare($connection, $query);
+        mysqli_stmt_bind_param($stmt, 'i', $user_id);
+        $execute = mysqli_stmt_execute($stmt);
+
+        if ($execute) {
+            echo "<script>alert('User deleted successfully.') </script>";
+        } else {
+            echo "<script>alert('Failed to delete user..') </script>";
+        }
+
+        mysqli_stmt_close($stmt);
+	}
+
+}
+
+
+# Redirect back to the users list page
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,6 +93,7 @@
 							<th>Mobile</th>
 							<th>Email</th>
 							<th>Address</th>
+							<th>Action</th>
 						</tr>
 				
 					<?php
@@ -71,6 +109,12 @@
 							<td><?php echo $email;?></td>
 							<td><?php echo $mobile;?></td>
 							<td><?php echo $address;?></td>
+							<td>
+								<!-- <button class="btn"><a href="<?php echo $row[''];?>">Delete</a></button></td> -->
+								<form method="post" action="">
+                                        <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+                                        <button type="submit" 	name="delete" class="btn text-primary">Delete</button>
+						</form>
 						</tr>
 					<?php
 						}
