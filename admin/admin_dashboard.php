@@ -1,6 +1,7 @@
 <?php
+	include("check_admin.php");	
+
 	require("functions.php");
-	session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -89,7 +90,7 @@
 				<div class="card-header">Total Book</div>
 				<div class="card-body">
 					<p class="card-text">No of books available: <?php echo get_book_count();?></p>
-					<a class="btn btn-success" href="Regbooks.php" target="_self">View All Books</a>
+					<a class="btn btn-success" href="manage_book.php" target="_self">View All Books</a>
 				</div>
 			</div>
 		</div>
@@ -98,7 +99,7 @@
 				<div class="card-header">Book Categories</div>
 				<div class="card-body">
 					<p class="card-text">No of Book's Categories: <?php echo get_category_count();?></p>
-					<a class="btn btn-warning" href="Regcat.php" target="_self">View Categories</a>
+					<a class="btn btn-warning" href="manage_cat.php" target="_self">View Categories</a>
 				</div>
 			</div>
 		</div>
@@ -107,7 +108,7 @@
 				<div class="card-header">No. of Authors</div>
 				<div class="card-body">
 					<p class="card-text">No of Authors: <?php echo get_author_count();?></p>
-					<a class="btn btn-primary" href="Regauthor.php" target="_self">View Authors</a>
+					<a class="btn btn-primary" href="manage_author.php" target="_self">View Authors</a>
 				</div>
 			</div>
 		</div>

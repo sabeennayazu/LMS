@@ -14,6 +14,7 @@
 		$email = $row['email'];
 		$mobile = $row['mobile'];
 	}
+	include("check_admin.php");
 ?>
 <!DOCTYPE html>
 <html>

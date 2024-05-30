@@ -1,6 +1,6 @@
 <?php
 	require("functions.php");
-	session_start();
+	include("check_admin.php");
 	#fetch data from database
 	$connection = mysqli_connect("localhost","root","");
 	$db = mysqli_select_db($connection,"lms");
@@ -104,7 +104,7 @@
 					</div>
 					<div class="form-group">
 						<label for="book_author">Author ID:</label>
-						<select class="form-control" name="author_id">
+						<select class="form-control" name="book_author">
 							<option>-Select author-</option>
 							<?php  
 								$query = "select author_id,author_name from authors";
@@ -120,7 +120,7 @@
 					</div>
 					<div class="form-group">
 						<label for="book_author">Category ID:</label>
-						<select class="form-control" name="cat_id">
+						<select class="form-control" name="book_category">
 							<option>-Select author-</option>
 							<?php  
 								$query = "select cat_id,cat_name from category";

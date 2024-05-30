@@ -1,12 +1,13 @@
 <?php
 require("functions.php");
-session_start();
+include("check_admin.php");
 
 // Fetch data from the database
 $connection = mysqli_connect("localhost", "root", "", "lms");
 if (mysqli_connect_errno()) {
     die("Failed to connect to MySQL: " . mysqli_connect_error());
 }
+
 
 $name = "";
 $email = "";

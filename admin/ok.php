@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	include("check_admin.php");
 	#fetch data from database
 	$connection = mysqli_connect("localhost","root","");
 	$db = mysqli_select_db($connection,"lms");

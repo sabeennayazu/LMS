@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="../bootstrap-4.4.1/css/bootstrap.min.css">
   	<script type="text/javascript" src="./bootstrap-4.4.1/js/juqery_latest.js"></script>
   	<script type="text/javascript" src="./bootstrap-4.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <style type="text/css">
 	#main_content{
@@ -78,23 +79,23 @@
 				if(isset($_POST['login'])){
 					$connection = mysqli_connect("localhost","root","");
 					$db = mysqli_select_db($connection,"lms");
-					$query = "select * from admins where email = '$_POST[email]'";
-					$query_run = mysqli_query($connection,$query);
-					while ($row = mysqli_fetch_assoc($query_run)) {
-						if($row['email'] == $_POST['email']){
-							if($row['password'] == $_POST['password']){
+					$query = "select * from admins where email = '$_POST[email]' and password='$_POST[password]'";
+					$result = $connection->query($query);
+					if($result->num_rows > 0){
+								$row = $result->fetch_assoc();
 								$_SESSION['name'] =  $row['name'];
 								$_SESSION['email'] =  $row['email'];
+
 								header("Location: admin_dashboard.php");
+
 							}
 							else{
 								?>
-								<br><br><center><span class="alert-danger">Wrong Password !!</span></center>
+								<br><br><center><span class="w-100 alert alert-danger">Wrong Password !!</span></center>
 								<?php
 							}
 						}
-					}
-				}
+				
 			?>
 		</div>
 	</div>

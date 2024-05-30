@@ -1,6 +1,7 @@
 <?php
 	require("functions.php");
 	session_start();
+	include("check_admin.php");
 ?>
 <!DOCTYPE html>
 <html>

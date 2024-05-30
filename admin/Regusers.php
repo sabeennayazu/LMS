@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	include("check_admin.php");
 	#fetch data from database
 	$connection = mysqli_connect("localhost","root","");
 	$db = mysqli_select_db($connection,"lms");
@@ -18,6 +18,7 @@ if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["delete"])) {
         $user_id = $_POST['user_id'];
 		if(mysqli_num_rows($connection->query("SELECT * FROM users where id=$user_id")) > 0) {
@@ -32,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["delete"])) {
         $execute = mysqli_stmt_execute($stmt);
 
         if ($execute) {
-            echo "<script>alert('User deleted successfully.') </script>";
+			header("Location: regusers.php");
         } else {
             echo "<script>alert('Failed to delete user..') </script>";
         }

@@ -1,6 +1,6 @@
 
 <?php
-	session_start();
+	include("check_admin.php");
 
 	if(isset($_POST['issue_book']))
 	{
