@@ -16,7 +16,7 @@
 		
 		$query_run = mysqli_query($connection,$query);
 		$connection->query("update books set avail=0 where book_no=$_POST[book_no]");
-		header("location:admin_dashboard.php");
+		header("location:issue_book.php");
 	}
 ?>
 

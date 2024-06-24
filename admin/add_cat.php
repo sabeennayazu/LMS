@@ -89,6 +89,10 @@
 	          <li class="nav-item">
 		        <a class="nav-link" href="issue_book.php">Issue Book</a>
 		      </li>
+			  <li>
+			  <a class="nav-link" href="return_book.php">Return Book</a>
+
+			  </li>
 		    </ul>
 		</div>
 	</nav><br>
@@ -102,7 +106,7 @@
 						<label for="name">Category Name:</label>
 						<input type="text" class="form-control" name="cat_name" required>
 					</div>
-					<button type="submit" name="add_cat" class="btn btn-primary">Add Catogry</button>
+					<button type="submit" name="add_cat" class="btn btn-primary">Add Catagory</button>
 				</form>
 			</div>
 			<div class="col-md-4"></div>

@@ -127,9 +127,7 @@
       <a class="dropdown-item dropdown-toggle" href="#" id="authorDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Author
       </a>
-      <div class="dropdown-menu" aria-labelledby="authorDropdown">
-        <!-- Author names fetched dynamically -->
-      </div>
+      
     </div>
   </div>
 </div>

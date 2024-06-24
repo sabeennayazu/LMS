@@ -120,9 +120,10 @@ $stmt->close();
                 <tbody>
                     <?php
                     $query = "SELECT books.book_name, authors.author_name, category.cat_name, books.book_no, books.book_price, books.avail 
-                              FROM books 
+                              FROM books
                               JOIN authors ON books.author_id = authors.author_id 
-                              JOIN category ON books.cat_id = category.cat_id";
+                              JOIN category ON books.cat_id = category.cat_id
+                              ";
                     $query_run = mysqli_query($connection, $query);
                     if (!$query_run) {
                         echo "Error: " . mysqli_error($connection);

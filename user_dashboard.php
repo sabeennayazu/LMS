@@ -67,7 +67,7 @@
 		    </ul>
 		</div>
 	</nav><br>
-	<span><marquee>This is library mangement system. Library opens at 8:00 AM and close at 8:00 PM</marquee></span><br><br>
+	<span><marquee> Library opens at 8:00 AM and close at 8:00 PM</marquee></span><br><br>
 	<div class="row">
 		<div class="col-md-3" style="margin: 25px">
 			<div class="card bg-light" style="width: 300px">
@@ -82,7 +82,7 @@
 			<div class="card bg-light" style="width: 300px">
 				<div class="card-header">Explore books</div>
 				<div class="card-body">
-				<p class="card-text">Total books : <?php echo get_book_count();?></p>
+				<p class="card-text">Available books : <?php echo get_book_count();?></p>
 
 					<a class="btn btn-warning" href="view_all_books.php">Explore Books</a>
 				</div>

@@ -38,7 +38,7 @@
 		</div>
 	</nav><br>
 	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd">
-		<div class="container-fluid">
+	<div class="container-fluid">
 			
 		    <ul class="nav navbar-nav navbar-center">
 		      <li class="nav-item">
@@ -71,6 +71,10 @@
 	          <li class="nav-item">
 		        <a class="nav-link" href="issue_book.php">Issue Book</a>
 		      </li>
+			  <li>
+			  <a class="nav-link" href="return_book.php">Return Book</a>
+
+			  </li>
 		    </ul>
 		</div>
 	</nav><br>
@@ -87,7 +91,7 @@
 		</div>
 		<div class="col-md-3" style="margin: 0px">
 			<div class="card bg-light" style="width: 300px">
-				<div class="card-header">Total Book</div>
+				<div class="card-header">Explore Book</div>
 				<div class="card-body">
 					<p class="card-text">No of books available: <?php echo get_book_count();?></p>
 					<a class="btn btn-success" href="manage_book.php" target="_self">View All Books</a>

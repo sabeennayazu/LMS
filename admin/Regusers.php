@@ -107,8 +107,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["delete"])) {
 					?>
 						<tr>
 							<td><?php echo $name;?></td>
-							<td><?php echo $email;?></td>
 							<td><?php echo $mobile;?></td>
+							<td><?php echo $email;?></td>
 							<td><?php echo $address;?></td>
 							<td>
 								<!-- <button class="btn"><a href="<?php echo $row[''];?>">Delete</a></button></td> -->
